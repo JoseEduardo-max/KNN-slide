@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>KNN - Apresentação</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css">
+
+  <style>
+    .fala {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #aaa;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+  <!-- Slide 1 -->
+  <section>
+    <h2>K-Nearest Neighbors (KNN)</h2>
+    <p>Algoritmo baseado em proximidade</p>
+    <p class="fala">
+      Hoje vou apresentar o KNN, um dos algoritmos mais simples e intuitivos do Machine Learning.
+    </p>
+  </section>
+
+  <!-- Slide 2 -->
+  <section>
+    <h3>O que é KNN</h3>
+    <ul>
+      <li>Algoritmo de classificação (e regressão)</li>
+      <li>Baseado em similaridade</li>
+      <li>Usa os vizinhos mais próximos</li>
+    </ul>
+    <p class="fala">
+      O KNN classifica um novo dado com base nos dados mais próximos dele.
+    </p>
+  </section>
+
+  <!-- Slide 3 -->
+  <section>
+    <h3>Intuição</h3>
+    <ul>
+      <li>"Diga-me com quem andas..."</li>
+      <li>Classificação por maioria</li>
+    </ul>
+    <p class="fala">
+      Se a maioria dos vizinhos for de uma classe, o novo ponto provavelmente será dessa mesma classe.
+    </p>
+  </section>
+
+  <!-- Slide 4 -->
+  <section>
+    <h3>Como funciona</h3>
+    <ol>
+      <li>Escolher K</li>
+      <li>Calcular distância</li>
+      <li>Selecionar vizinhos</li>
+      <li>Votação</li>
+    </ol>
+    <p class="fala">
+      O algoritmo não aprende um modelo explícito, ele usa os dados diretamente.
+    </p>
+  </section>
+
+  <!-- Slide 5 -->
+  <section>
+    <h3>Distância</h3>
+    <p>d = √((x₁ - x₂)² + (y₁ - y₂)²)</p>
+    <p>Distância Euclidiana (mais comum)</p>
+    <p class="fala">
+      A distância define quem é “vizinho” no problema.
+    </p>
+  </section>
+
+  <!-- Slide 6 -->
+  <section>
+    <h3>O papel do K</h3>
+    <ul>
+      <li>K pequeno → sensível a ruído</li>
+      <li>K grande → mais estável</li>
+    </ul>
+    <p class="fala">
+      Escolher o K certo é essencial para o desempenho do modelo.
+    </p>
+  </section>
+
+  <!-- Slide 7 -->
+  <section>
+    <h3>Vantagens</h3>
+    <ul>
+      <li>Simples</li>
+      <li>Fácil de entender</li>
+      <li>Sem treinamento complexo</li>
+    </ul>
+  </section>
+
+  <!-- Slide 8 -->
+  <section>
+    <h3>Desvantagens</h3>
+    <ul>
+      <li>Lento com muitos dados</li>
+      <li>Sensível à escala</li>
+      <li>Escolha do K impacta muito</li>
+    </ul>
+  </section>
+
+  <!-- Slide 9 -->
+  <section>
+    <h3>Quando usar</h3>
+    <ul>
+      <li>Problemas simples</li>
+      <li>Dados pequenos</li>
+      <li>Quando interpretação é importante</li>
+    </ul>
+  </section>
+
+  <!-- Slide 10 -->
+  <section>
+    <h3>Conclusão</h3>
+    <ul>
+      <li>Baseado em proximidade</li>
+      <li>Fácil implementação</li>
+      <li>Muito usado como baseline</li>
+    </ul>
+    <p class="fala">
+      Apesar de simples, o KNN é muito útil e serve como base para entender outros algoritmos.
+    </p>
+  </section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script>
+  Reveal.initialize();
+</script>
+
+</body>
+</html>
