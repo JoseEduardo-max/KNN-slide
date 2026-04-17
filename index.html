@@ -14,6 +14,9 @@
       color: #aaa;
       font-style: italic;
     }
+    img {
+      max-width: 500px;
+    }
   </style>
 </head>
 
@@ -33,15 +36,12 @@
 
   <!-- Slide 2 -->
   <section>
-    <h3>O que é KNN</h3>
+    <h3>O que o KNN faz?</h3>
     <ul>
-      <li>Algoritmo de classificação (e regressão)</li>
+      <li>Classifica novos dados</li>
       <li>Baseado em similaridade</li>
-      <li>Usa os vizinhos mais próximos</li>
+      <li>Também pode fazer regressão</li>
     </ul>
-    <p class="fala">
-      O KNN classifica um novo dado com base nos dados mais próximos dele.
-    </p>
   </section>
 
   <!-- Slide 3 -->
@@ -51,48 +51,117 @@
       <li>"Diga-me com quem andas..."</li>
       <li>Classificação por maioria</li>
     </ul>
-    <p class="fala">
-      Se a maioria dos vizinhos for de uma classe, o novo ponto provavelmente será dessa mesma classe.
-    </p>
+  </section>
+
+  <!-- Slide IMAGEM (Intuição) -->
+  <section>
+    <h3>Visualização</h3>
+    <!-- COLOQUE SUA IMAGEM AQUI -->
+    <img src="img/classificação-por-maioria.png">
   </section>
 
   <!-- Slide 4 -->
   <section>
-    <h3>Como funciona</h3>
+    <h3>Como o KNN classifica?</h3>
     <ol>
-      <li>Escolher K</li>
+      <li>Escolher K (n_neighbors)</li>
       <li>Calcular distância</li>
-      <li>Selecionar vizinhos</li>
-      <li>Votação</li>
+      <li>Selecionar vizinhos mais próximos</li>
+      <li>Classificar por maioria</li>
     </ol>
-    <p class="fala">
-      O algoritmo não aprende um modelo explícito, ele usa os dados diretamente.
-    </p>
   </section>
 
   <!-- Slide 5 -->
   <section>
-    <h3>Distância</h3>
-    <p>d = √((x₁ - x₂)² + (y₁ - y₂)²)</p>
-    <p>Distância Euclidiana</p>
-    <p class="fala">
-      A distância define quem é “vizinho” no problema.
-    </p>
+    <h3>Parâmetros do KNN</h3>
+    <ul>
+      <li><strong>n_neighbors:</strong> número de vizinhos</li>
+      <li><strong>metric:</strong> tipo de distância</li>
+    </ul>
   </section>
 
   <!-- Slide 6 -->
+  <section>
+    <h3>Distância Euclidiana</h3>
+    <p>d = √((x₁ - x₂)² + (y₁ - y₂)²)</p>
+  </section>
+
+  <!-- Slide 7 -->
+  <section>
+    <h3>Distância de Minkowski</h3>
+    <p>d = ( |x₁ - x₂|^p + |y₁ - y₂|^p )^(1/p)</p>
+    <ul>
+      <li>p = 2 → Euclidiana</li>
+      <li>p = 1 → Manhattan</li>
+    </ul>
+  </section>
+
+  <!-- Slide IMAGEM (Distância) -->
+  <section>
+    <h3>Exemplo de Distância</h3>
+    <!-- COLOQUE SUA IMAGEM AQUI -->
+    <img src="img/calculo-distancia.png">
+  </section>
+
+  <!-- Slide 8 -->
+  <section>
+    <h3>Exemplo de Classificação</h3>
+    <ul>
+      <li>Pontos conhecidos:</li>
+      <li>A(1,1) → Classe 🔵</li>
+      <li>B(2,2) → Classe 🔵</li>
+      <li>C(5,5) → Classe 🔴</li>
+      <li>D(6,6) → Classe 🔴</li>
+    </ul>
+  </section>
+
+  <!-- Slide 9 -->
+  <section>
+    <h3>Novo ponto</h3>
+    <ul>
+      <li>Ponto P(3,3)</li>
+      <li>K = 3</li>
+    </ul>
+  </section>
+
+  <!-- Slide 10 -->
+  <section>
+    <h3>Cálculo das Distâncias</h3>
+    <ul>
+      <li>P → A = 2.82</li>
+      <li>P → B = 1.41</li>
+      <li>P → C = 2.82</li>
+      <li>P → D = 4.24</li>
+    </ul>
+  </section>
+
+  <!-- Slide 11 -->
+  <section>
+    <h3>Classificação</h3>
+    <ul>
+      <li>Vizinhos mais próximos:</li>
+      <li>B (🔵), A (🔵), C (🔴)</li>
+      <li>Resultado: 🔵</li>
+    </ul>
+  </section>
+
+  <!-- Slide IMAGEM (Exemplo) -->
+  <section>
+    <h3>Visualização do Exemplo</h3>
+    <!-- COLOQUE SUA IMAGEM AQUI -->
+    <img src="img/exemplo-knn.png">
+  </section>
+
+  <!-- Slide 12 -->
   <section>
     <h3>O papel do K</h3>
     <ul>
       <li>K pequeno → sensível a ruído</li>
       <li>K grande → mais estável</li>
     </ul>
-    <p class="fala">
-      Escolher o K certo é essencial para o desempenho do modelo.
-    </p>
   </section>
 
-  <!-- Slide 7 -->
+  <!-- Slide 13 -->
   <section>
     <h3>Vantagens</h3>
     <ul>
@@ -102,7 +171,7 @@
     </ul>
   </section>
 
-  <!-- Slide 8 -->
+  <!-- Slide 14 -->
   <section>
     <h3>Desvantagens</h3>
     <ul>
@@ -112,17 +181,7 @@
     </ul>
   </section>
 
-  <!-- Slide 9 -->
-  <section>
-    <h3>Quando usar</h3>
-    <ul>
-      <li>Problemas simples</li>
-      <li>Dados pequenos</li>
-      <li>Quando interpretação é importante</li>
-    </ul>
-  </section>
-
-  <!-- Slide 10 -->
+  <!-- Slide 15 -->
   <section>
     <h3>Conclusão</h3>
     <ul>
@@ -130,9 +189,6 @@
       <li>Fácil implementação</li>
       <li>Muito usado como baseline</li>
     </ul>
-    <p class="fala">
-      Apesar de simples, o KNN é muito útil e serve como base para entender outros algoritmos.
-    </p>
   </section>
 
 </div>
